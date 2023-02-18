@@ -9,12 +9,8 @@
 | GET        |  /museums/edit/:museum_id              | Edit museum form                |       |
 | POST       |  /museums/edit/:museum_id              | Update museum                   |       |
 | POST       |  /museums/delete/:museum_id            | Delete museum                   |       |  
-
-
 | GET        | /museums/:museum_id/piece/:piece_id    | Piece details                   |   X   |
 | GET        | /museums/:museum_id/artist/:artist_id  | Pie                             |   X   |
-
-
 | GET        |  /events                               | List of events                  |       |
 | GET        |  /events/details/:event_id             | Event details                   |       |
 | GET        |  /events/create                        | New event form                  |   X   |
@@ -22,15 +18,11 @@
 | GET        |  /events/edit/:event_id                | Edit event form                 |   X   |
 | POST       |  /events/edit/:event_id                | Update event                    |       |
 | POST       |  /events/delete/:event_id              | Delete event                    |       |
-
-
 | GET        |  /signup                               | Register form                   |       |
 | POST       |  /signup                               | Register form handler           |       |
 | GET        |  /login                                | Log in form                     |       |
 | POST       |  /login                                | Log in form handler             |       |
 | POST       |  /logout                               | Log out  handler                |       |
-
-
 | GET        |  /user/details                         | User details                    |       |
 | GET        |  /user/edit/:user_id                   | Edit user form                  |       |
 | POST       |  /user/edit/:user_id                   | Update user                     |       |
