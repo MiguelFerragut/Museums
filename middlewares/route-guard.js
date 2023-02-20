@@ -26,12 +26,12 @@ const checkRole = (...roles) => (req, res, next) => {
     }
 }
 
-// const checkUser = (req, res, next) => {
-//     if (req.session.currentUser._id === req.params.user_id || req.session.currentUser.role === 'ADMIN') next()
-//     else {
-//         res.render('auth/login', { errorMessage: `You do not have permissions to continue.` })
-//     }
-// }
+const checkUser = (req, res, next) => {
+    if (req.session.currentUser._id === req.params.user_id || req.session.currentUser.role === 'ADMIN') next()
+    else {
+        res.render('auth/login', { errorMessage: `You do not have permissions to continue.` })
+    }
+}
 
 
-module.exports = { isLoggedIn, isLoggedOut, checkRole }
+module.exports = { isLoggedIn, isLoggedOut, checkRole, checkUser }

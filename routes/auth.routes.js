@@ -1,6 +1,6 @@
 const router = require("express").Router()
-const bcrypt = require('bcrypt')                             //Why didn't it work with bcryptjs as argument??? It works with just bcrypt
-// const { isLoggedOut } = require("../middlewares/route-guard")
+const bcrypt = require('bcryptjs')
+const { isLoggedOut } = require("../middlewares/route-guard")
 const User = require("../models/User.model")
 const saltRounds = 10
 
@@ -8,12 +8,12 @@ router.get('/signup', (req, res, next) => res.render('auth/signup'))
 
 router.post('/signup', (req, res, next) => {
 
-    const { password } = req.body
+    const { password, username, avatar, email } = req.body
 
     bcrypt
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(password, salt))
-        .then(hashedPassword => User.create({ ...req.body, password: hashedPassword }))
+        .then(hashedPassword => User.create({ username, avatar, email, password: hashedPassword }))
         .then(createdUser => res.redirect('/'))
         .catch(error => next(error))
 })

@@ -1,6 +1,6 @@
 const { Schema, model, SchemaType } = require("mongoose");
 
-const musueumSchema = new Schema(
+const museumSchema = new Schema(
     {
         name: {
             type: String,
@@ -13,27 +13,26 @@ const musueumSchema = new Schema(
             required: true,
             max: 100
         },
-        imageUrl: {
+        cover: {
             type: String,
-            default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/BSicon_MUSEUM.svg/1200px-BSicon_MUSEUM.svg.png'
+            set: string => string === '' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/BSicon_MUSEUM.svg/1200px-BSicon_MUSEUM.svg.png' : string
         },
         location: {
             type: {
-                type: String
+                type: String,
+                required: true
             },
-            coordinates: [Number],
-            required: true
+            coordinates: [Number]
         },
-        departments: {                                      //Coming from API
-            ref: 'department',
-            type: Schema.Types.ObjectId
-        }
+        departments: [String]
     },
     {
         timestamps: true
     }
 );
 
-const Museum = model("Museum", musueumSchema);
+museumSchema.index({ location: '2dsphere' })
+
+const Museum = model("Museum", museumSchema);
 
 module.exports = Museum;

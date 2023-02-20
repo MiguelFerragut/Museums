@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-8">
-            <h1>Sign Up</h1>
+            <h1>New Museum Form</h1>
             <hr>
         </div>
     </div>
@@ -13,32 +13,34 @@
 
         <div class="col-md-6">
 
-            <h1>Sign Up</h1>
-            <hr>
-
-            <form action="/signup" method="POST">
+            <form action="/museums/create" method="POST">
 
                 <div class="mb-3 row">
                     <div class="col">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <label for="longitude" class="form-label">Location Longitude</label>
+                        <input type="text" class="form-control" id="museumLongitud" name="longitude">
                         <div class="form-text">Reqired.</div>
                     </div>
                     <div class="col">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <label for="latitude" class="form-label">Location Latitude</label>
+                        <input type="text" class="form-control" id="museumLatitude" name="latitude">
                         <div class="form-text">Required.</div>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="username" class="form-label">User name</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="museumName" name="name">
                 </div>
 
                 <div class="mb-3">
-                    <label for="imageUrl" class="form-label">Image</label>
-                    <input type="imageUrl" class="form-control" id="imageUrl" name="avatar">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="museumDescription" rows="3" name="description"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cover" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="museumCover" name="cover">
                     <div class="form-text">Insert an image.</div>
                 </div>
 

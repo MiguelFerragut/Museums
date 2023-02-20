@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Museums";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb+srv://IronhackMuseums:Ironhack0123@cluster0.2z7janl.mongodb.net/museums";
 
 mongoose
   .set('strictQuery', true)
