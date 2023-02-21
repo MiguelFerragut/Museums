@@ -24,7 +24,7 @@
 | POST       |  /login                                | Log in form handler             |       |
 | POST       |  /logout                               | Log out  handler                |       |
 | GET        |  /users                                | List of users                   |       |
-| GET        |  /users/details/:user_id                        | User details                    |       |
+| GET        |  /users/details/:user_id               | User details                    |       |
 | GET        |  /users/edit/:user_id                  | Edit user form                  |       |
 | POST       |  /users/edit/:user_id                  | Update user                     |       |
 | POST       |  /users/delete/:user_id                | Delete user                     |       |

@@ -15,7 +15,7 @@ const eventSchema = new Schema(
         description: {
             type: String,
             required: true,
-            max: 100
+            max: 300
         },
         cover: {
             type: String,

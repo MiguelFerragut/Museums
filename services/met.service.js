@@ -8,9 +8,9 @@ class MetApiService {
         })
     }
 
-    // getAllCharacters() {
-    //     return this.api.get('/characters')
-    // }
+    getAllDepartments() {
+        return this.api.get('/departments')
+    }
 
     // getOneCharacter(characterId) {
     //     return this.api.get(`/characters/${characterId}`)

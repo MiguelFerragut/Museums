@@ -11,7 +11,7 @@ const museumSchema = new Schema(
         description: {
             type: String,
             required: true,
-            max: 100
+            max: 300
         },
         cover: {
             type: String,
@@ -24,7 +24,10 @@ const museumSchema = new Schema(
             },
             coordinates: [Number]
         },
-        departments: [String]
+        departments: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Department'
+        }]
     },
     {
         timestamps: true
